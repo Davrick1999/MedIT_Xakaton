@@ -47,7 +47,7 @@ function App() {
         <title>Post</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="grid grid-cols-4 w-full px-6 space-x-2">
+      <main className="grid lg:grid-cols-4 w-full px-6 space-x-2">
         <div className="col-span-3 w-full space-y-4">
           <h5 className="text-2xl pt-6">{postData.title}</h5>
           <div className="flex justify-between w-full border-b pb-4">
@@ -68,10 +68,11 @@ function App() {
               ))}
             </div>
             <div className="text-sm font-light text-blue-600">
-              {dateTimeConvert(postData.date.seconds)}
+              {dateTimeConvert(postData.date.seconds * 1000)}
             </div>
           </div>
           <div className="font-light w-4/5">{postData.body}</div>
+
           <Textarea
             label="Ответить на вопрос"
             hasSubLabel={false}

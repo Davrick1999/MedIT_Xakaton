@@ -1,13 +1,16 @@
-// import '../styles/globals.css'
-import "tailwindcss/tailwind.css";
+import { useRouter } from "next/router";
 import Navbar from "../components/Navbar";
+import { AuthProvider } from "../context/AuthContext";
+import "tailwindcss/tailwind.css";
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
   return (
-    <>
-      <Navbar />
+    <AuthProvider>
+      {router.pathname !== "/auth/sign-up" &&
+        router.pathname !== "/auth/login" && <Navbar />}
       <Component {...pageProps} />
-    </>
+    </AuthProvider>
   );
 }
 

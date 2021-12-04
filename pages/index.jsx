@@ -5,8 +5,8 @@ import Image from "next/image";
 import Input from "../components/Input";
 import Textarea from "../components/Textarea";
 import { seperateTags } from "../functions/seperateTags";
-import { database } from "../utils/firebase";
-import { collection, getDoc, addDoc, updateDoc, doc } from "firebase/firestore";
+import { database, firebase } from "../utils/firebase";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 export const drugs = [
   {
@@ -75,16 +75,21 @@ export default function Home() {
   };
 
   const handleSubmit = async () => {
-    await addDoc(postsCollection, { title, body, tags });
+    await addDoc(postsCollection, {
+      title,
+      body,
+      tags,
+      date: serverTimestamp(),
+    });
     router.push("/posts");
   };
   return (
     <div className="flex flex-col items-center min-h-screen">
       <Head>
-        <title>Create Next App</title>
+        <title>MedIT</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="grid grid-cols-4 w-full px-4 space-x-2">
+      <main className="grid lg:grid-cols-4 sm:grid-cols-1 w-full px-4 lg:space-x-2">
         <div className="col-span-3 w-full space-y-4">
           {/* <div className="flex space-x-1">
             <div
@@ -161,7 +166,13 @@ export default function Home() {
                 {drugs.map(({ name, production }, index) => (
                   <div
                     key={index}
-                    className="flex text-white bg-gray-700 rounded transition duration-150 ease-linear hover:text-gray-700 border hover:border-gray-700 hover:bg-transparent cursor-pointer py-1.5 px-4 m-1"
+                    className="text-sm text-white 
+                    bg-gray-700 rounded 
+                    transition duration-150 ease-linear 
+                    hover:text-gray-700 border 
+                    hover:border-gray-700 
+                    hover:bg-transparent 
+                    cursor-pointer py-1 px-4 m-1"
                   >
                     {name}
                   </div>

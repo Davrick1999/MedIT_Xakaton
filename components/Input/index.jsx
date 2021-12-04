@@ -5,6 +5,8 @@ export default function Input({
   className,
   placeholder,
   label = "Label",
+  hasSubLabel = true,
+  password = false,
   subLabel = "Sub label",
   ...rest
 }) {
@@ -13,11 +15,16 @@ export default function Input({
   const handleClick = () => inputRef.current.focus();
 
   return (
-    <div className="flex flex-col" onClick={handleClick}>
+    <div
+      className={`flex flex-col ${!hasSubLabel && "space-y-2"}`}
+      onClick={handleClick}
+    >
       <label className="font-medium cursor-pointer">{label}</label>
-      <label className="text-sm font-light cursor-pointer pb-1.5">
-        {subLabel}
-      </label>
+      {hasSubLabel && (
+        <label className="text-sm font-light cursor-pointer pb-1.5">
+          {subLabel}
+        </label>
+      )}
       <div
         className={`border
         bg-white
@@ -39,7 +46,7 @@ export default function Input({
         <input
           ref={inputRef}
           className="w-full outline-none px-4"
-          type="text"
+          type={password ? `password` : `text`}
           {...rest}
           placeholder={placeholder}
         >

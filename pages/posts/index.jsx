@@ -27,7 +27,7 @@ function Posts() {
         <title>Posts list</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="grid grid-cols-4 w-full px-4 space-x-2">
+      <main className="grid lg:grid-cols-4 sm:grid-cols-1 w-full px-4 lg:space-x-2">
         <div className="col-span-3 w-full space-y-4">
           <h5 className="text-2xl py-6">Топ вопросы {`(${posts.length})`}</h5>
           {posts?.map(({ id, title, body, tags }) => (
