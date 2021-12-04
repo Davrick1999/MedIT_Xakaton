@@ -14,3 +14,33 @@ a {
 * {
   box-sizing: border-box;
 }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+}
+
+.menu {
+  animation: fadeIn 0.25s ease-in-out;
+}
+
+.menu--close {
+  animation: fadeOut 0.25s ease-in-out;
+}

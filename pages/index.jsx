@@ -10,27 +10,33 @@ import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 export const drugs = [
   {
-    name: "Амброксол",
+    label: "Амброксол",
+    value: "Амброксол",
     production: "Phfizer",
   },
   {
-    name: "Аспирин",
+    label: "Аспирин",
+    value: "Аспирин",
     production: "Phfizer",
   },
   {
-    name: "Бронхипрет",
+    label: "Бронхипрет",
+    value: "Бронхипрет",
     production: "Phfizer",
   },
   {
-    name: "Доктор Мом",
+    label: "Доктор Мом",
+    value: "Доктор Мом",
     production: "Phfizer",
   },
   {
-    name: "АЦЦ",
+    label: "АЦЦ",
+    value: "АЦЦ",
     production: "Phfizer",
   },
   {
-    name: "Мукальтин",
+    label: "Мукальтин",
+    value: "Мукальтин",
     production: "Phfizer",
   },
 ];
@@ -163,7 +169,7 @@ export default function Home() {
             <div>
               <p className="text-xl font-medium m-1">Список препаратов</p>
               <div className="flex flex-wrap">
-                {drugs.map(({ name, production }, index) => (
+                {drugs.map(({ label, production }, index) => (
                   <div
                     key={index}
                     className="text-sm text-white 
@@ -174,7 +180,7 @@ export default function Home() {
                     hover:bg-transparent 
                     cursor-pointer py-1 px-4 m-1"
                   >
-                    {name}
+                    {label}
                   </div>
                 ))}
               </div>

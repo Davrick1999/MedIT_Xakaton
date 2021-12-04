@@ -43,12 +43,12 @@ function Posts() {
           <div>
             <p className="text-xl font-medium m-1">Список препаратов</p>
             <div className="flex flex-wrap">
-              {drugs.map(({ name, production }, index) => (
+              {drugs.map(({ label, production }, index) => (
                 <div
                   key={index}
                   className="flex text-white bg-gray-700 rounded transition duration-150 ease-linear hover:text-gray-700 border hover:border-gray-700 hover:bg-transparent cursor-pointer py-1.5 px-4 m-1"
                 >
-                  {name}
+                  {label}
                 </div>
               ))}
             </div>

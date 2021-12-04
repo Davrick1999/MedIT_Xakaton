@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
-import { collection, getDoc, addDoc, updateDoc, doc } from "firebase/firestore";
+import { getDoc, doc } from "firebase/firestore";
 import { database } from "../../../utils/firebase";
 import Textarea from "../../../components/Textarea";
+import Select from "../../../components/Select";
 import dateTimeConvert from "../../../functions/dateTimeConvert";
+import { drugs } from "../..";
 
 function App() {
   const router = useRouter();
@@ -78,6 +80,7 @@ function App() {
             hasSubLabel={false}
             style={{ height: "200px" }}
           />
+          <Select placeholder="Добавьте лекрства" options={drugs} isMulti />
           <button
             // onClick={() => handleSubmit()}
             className="bg-blue-500 hover:bg-blue-600 transition ease-linear text-white font-medium py-2 px-4 rounded"

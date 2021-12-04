@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import Navbar from "../components/Navbar";
 import { AuthProvider } from "../context/AuthContext";
 import "tailwindcss/tailwind.css";
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
