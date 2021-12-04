@@ -15,6 +15,15 @@ function Navbar() {
       </div>
 
       <div className="sm:mb-0 self-center space-x-4">
+        <Link href="/clinics">
+          <a classNameName="text-blue-500">Clinics</a>
+        </Link>
+        <Link href="/doctor/groups">
+          <a classNameName="text-blue-500">Groups</a>
+        </Link>
+        <Link href="/doctor">
+          <a classNameName="text-blue-500">Doctor</a>
+        </Link>
         <Link href="/posts">
           <a classNameName="text-blue-500">Список вопросов</a>
         </Link>

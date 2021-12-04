@@ -1,0 +1,62 @@
+.myCard {
+    display: flex;
+    height: 200px;
+    width: 80%;
+    background-color: rgb(244, 245, 245);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.myCard > div:first-child {
+    width: 30%;
+    background-color: rgb(231, 209, 181);
+}
+
+.myCard > div:first-child > img {
+    object-fit: cover;
+    object-position: center;
+}
+
+.myCard > div:nth-child(2) {
+    width: 50%;
+}
+
+.myCard > div:nth-child(3) {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 58px;
+}
+
+.myCard .myCard-about {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 70px;
+
+}
+
+.clinic {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.clinic-details {
+    width: 79%;
+}
+
+.clinic-details > div:first-child > img {
+    object-fit: cover;
+    height: 300px;
+    width: 100%;
+    object-position: center;
+}
+
+.clinic-doctors {
+    width: 20%;
+}
