@@ -21,9 +21,8 @@ function App() {
   useEffect(() => {
     if (id) {
       getProperty(id);
-      console.log(dateTimeConvert(postData.date.seconds), "date");
     }
-  }, []);
+  }, [id]);
 
   const getProperty = (id) => {
     setIsGettingData(true);

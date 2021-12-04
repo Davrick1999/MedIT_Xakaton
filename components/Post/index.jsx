@@ -26,8 +26,8 @@ function Post({ id, title, body, tags }) {
           {title}
         </p>
         <div className="flex space-x-2">
-          {tags?.map((tag) => (
-            <Tag>{tag}</Tag>
+          {tags?.map((tag, index) => (
+            <Tag key={index}>{tag}</Tag>
           ))}
         </div>
       </div>
