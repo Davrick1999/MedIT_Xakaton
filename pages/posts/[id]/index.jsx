@@ -24,7 +24,7 @@ function App() {
     if (id) {
       getProperty(id);
     }
-  }, [id]);
+  }, []);
 
   const getProperty = (id) => {
     setIsGettingData(true);
